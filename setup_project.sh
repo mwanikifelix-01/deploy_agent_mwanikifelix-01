@@ -101,3 +101,34 @@ read -p "enter new failure value: " failure_new
 sed -i "s/\"failure\": [[:digit:]]*/\"failure\": ${failure_new}/" ${PARENT_DIR}/Helpers/config.json
 echo "Change successful."
 
+# This code checks if python3 is installed.
+
+
+echo "Checking if python3 is intalled and its current version"
+python3 --version
+echo "check successful"
+
+m="${PARENT_DIR}/Helpers"
+j="${PARENT_DIR}/reports"
+v="${PARENT_DIR}/attendance_checker.py"
+l="${m}/assets.csv"
+o="${m}/config.json"
+n="${j}/reports.log"
+
+for z in "$m" "$j" "${PARENT_DIR}"
+do
+	if [ -d $z ]; then 
+		echo "directory "${z}" exists"
+	else 
+		echo "directory $z does not exist"
+	fi
+done
+
+for y in $v $l $o $n
+do
+	if [ -e "$y" ]; then
+		echo "file $y exists "
+	else
+		echo "file $y does not exist"
+	fi
+done
