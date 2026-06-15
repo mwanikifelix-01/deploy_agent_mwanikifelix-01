@@ -105,8 +105,18 @@ echo "Change successful."
 
 
 echo "Checking if python3 is intalled and its current version"
-python3 --version
-echo "check successful"
+
+if python3 --version > /dev/null 2>&1; then
+	echo "SUCESS!! $(python3 --version) INSTALLED"
+else 
+	echo "WARNING!! python3 not installed"
+fi
+
+echo "check done"
+
+
+#This code checks the directory structure
+
 
 m="${PARENT_DIR}/Helpers"
 j="${PARENT_DIR}/reports"
