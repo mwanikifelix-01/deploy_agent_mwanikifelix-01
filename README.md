@@ -3,7 +3,7 @@ The Attendance Tracker is a Bash script that helps you set up a complete attenda
 
 HOW TO RUN THE CODE SO THAT IT WORKS
 To access it, first clone the repository using the link: https://github.com/mwanikifelix-01/deploy_agent_mwanikifelix-01.git  then navigate into the directory deploy_agent_mwanikifelix-01.
-To run it, you make the script executable with chmod +x setup.sh, run it with ./setup.sh and enter your preferred thresholds when prompted. When the attendance_checker.py is run by inputing python3 attendance_checker.py, the checker reads the student CSV, calculates each student's attendance percentage against the total sessions in the config, and writes alert messages to reports/reports.log for anyone who falls below a threshold.
+To run it, you make the script executable with chmod +x setup_project.sh, run it with ./setup.sh and enter your preferred thresholds when prompted. When the attendance_checker.py is run by inputing python3 attendance_checker.py, the checker reads the student CSV, calculates each student's attendance percentage against the total sessions in the config, and writes alert messages to reports/reports.log for anyone who falls below a threshold.
 
 HOW THE ARCHIVE FEATURE IS TRIGGERED
 The archive feature acts as a safety net when you press Ctrl+C during the setup script. Rather than stopping right away, the script catches the interrupt and runs archive_save(). This command packs the project folder into a tar archive and deletes the original folder only if the archive is created successfully. You can restore the archive later using tar -xvf followed by the filename.
